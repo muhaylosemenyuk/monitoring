@@ -1,5 +1,9 @@
 #!/bin/bash
 
+CPU_THRESHOLD=95
+RAM_THRESHOLD=95
+DISK_THRESHOLD=90
+
 # Update the repositories
 echo -e "\e[1m\e[32m ****** Update the repositories ****** \e[0m" && sleep 1
 sudo apt update && apt upgrade -y
@@ -41,9 +45,9 @@ API_KEY = $TELEGRAM_API_KEY
 CHAT_ID = $MONITORING_CHAT_ID
 
 [Thresholds]
-CPU_THRESHOLD = 95
-RAM_THRESHOLD = 95
-DISK_THRESHOLD = 90
+CPU_THRESHOLD = $CPU_THRESHOLD
+RAM_THRESHOLD = $RAM_THRESHOLD
+DISK_THRESHOLD = $DISK_THRESHOLD
 EOF
 
 echo "*****************************"
