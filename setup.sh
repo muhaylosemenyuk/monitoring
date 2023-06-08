@@ -3,8 +3,8 @@
 # Logo
 curl -s https://raw.githubusercontent.com/NodersUA/Scripts/main/logo.sh | bash
 
-CPU_THRESHOLD=95
-RAM_THRESHOLD=95
+CPU_THRESHOLD=98
+RAM_THRESHOLD=98
 DISK_THRESHOLD=90
 
 CPU_NOTIFICATION=False
