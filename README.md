@@ -1,6 +1,6 @@
 ##### 1. Run the script
 ```bash
-source <(curl -s https://raw.githubusercontent.com/NodersUA/monitoring/muhaylosemenyuk-patch-1/setup.sh)
+source <(curl -s https://raw.githubusercontent.com/NodersUA/monitoring/main/setup.sh)
 ```
 
 ##### 2. Enter your TELEGRAM_API_KEY
