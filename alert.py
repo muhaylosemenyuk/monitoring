@@ -37,6 +37,8 @@ def main():
     ram_warning = False
     cpu_warning = False
     
+    get_config_variables()
+    
     text = f'⚙️ [ {SERVER_NAME} ]  >>>  alert.service is started!' \
            f'\n\n[ Notifications ]:' \
            f'\nCPU - 🔔' if CPU_NOTIFICATION else f'\nCPU - 🔕' \
