@@ -37,7 +37,14 @@ def main():
     ram_warning = False
     cpu_warning = False
     
-    send_message(f'⚙️ [ {SERVER_NAME} ]  >>>  alert.service is started!')
+    text = f'⚙️ [ {SERVER_NAME} ]  >>>  alert.service is started!' \
+           f'\n\n[ Notifications ]:' \
+           f'\nCPU - 🔔' if CPU_NOTIFICATION else f'\nCPU - 🔕' \
+           f'\nRAM - 🔔' if RAM_NOTIFICATION else f'\nRAM - 🔕' \
+           f'\nDISC - 🔔' if DISC_NOTIFICATION else f'\nDISC - 🔕' \
+    
+    send_message(text)
+    
     
     while True:
         get_config_variables()
