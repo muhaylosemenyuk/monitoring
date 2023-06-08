@@ -7,6 +7,10 @@ CPU_THRESHOLD=95
 RAM_THRESHOLD=95
 DISK_THRESHOLD=90
 
+CPU_NOTIFICATION=False
+RAM_NOTIFICATION=False
+DISC_NOTIFICATION=True
+
 # Update the repositories
 echo -e "\e[1m\e[32m ****** Update the repositories ****** \e[0m" && sleep 1
 sudo apt update && apt upgrade -y
@@ -51,6 +55,11 @@ CHAT_ID = $MONITORING_CHAT_ID
 CPU_THRESHOLD = $CPU_THRESHOLD
 RAM_THRESHOLD = $RAM_THRESHOLD
 DISK_THRESHOLD = $DISK_THRESHOLD
+
+[Notifications]
+CPU_NOTIFICATION = $CPU_NOTIFICATION
+RAM_NOTIFICATION = $RAM_NOTIFICATION
+DISC_NOTIFICATION = $DISC_NOTIFICATION
 EOF
 
 echo "*****************************"
