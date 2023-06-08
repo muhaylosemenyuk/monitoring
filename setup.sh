@@ -80,8 +80,8 @@ After=network.target
 
 [Service]
 User=$USER
-ExecStart=/usr/bin/python3 ~/monitoring/alert.py
-WorkingDirectory=~/monitoring
+ExecStart=/usr/bin/python3 $HOME/monitoring/alert.py
+WorkingDirectory=$HOME/monitoring
 
 [Install]
 WantedBy=multi-user.target
