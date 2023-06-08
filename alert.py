@@ -27,6 +27,8 @@ def main():
     ram_warning = False
     cpu_warning = False
     
+    send_message(f'⚙️ [ {SERVER_NAME} ]  >>>  alert.service is started!')
+    
     while True:
         # Check CPU usage
         cpu_percent = psutil.cpu_percent(interval=1)
