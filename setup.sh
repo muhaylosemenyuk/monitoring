@@ -9,7 +9,7 @@ sudo apt install pip -y
 
 # Clone repository
 echo -e "        \e[1m\e[32m2. Clone repository--> \e[0m" && sleep 1
-cd $HOME && git clone https://github.com/NodersUA/monitoring/tree/main
+cd $HOME && git clone https://github.com/NodersUA/monitoring/tree/muhaylosemenyuk-patch-1
 cd monitoring && pip install -r requirements.txt
 
 #=======================================================================
