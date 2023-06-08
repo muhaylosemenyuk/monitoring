@@ -18,34 +18,54 @@ If you want to change the threshold values ​​then edit the `config.conf` fil
 nano $HOME/monitoring/config.conf
 ```
 
+You can also change the threshold values ​​with commands
+```bash
+sed -i 's/CPU_THRESHOLD = .*/CPU_THRESHOLD = 80/g' ~/monitoring/config.conf
+sed -i 's/RAM_THRESHOLD = .*/RAM_THRESHOLD = 80/g' ~/monitoring/config.conf
+sed -i 's/DISC_THRESHOLD = .*/DISC_THRESHOLD = 80/g' ~/monitoring/config.conf
+```
+
+You can also turn notifications on or off with commands
+```bash
+# On notifications
+sed -i 's/CPU_NOTIFICATION = .*/CPU_NOTIFICATION = True/g' ~/monitoring/config.conf
+sed -i 's/RAM_NOTIFICATION = .*/RAM_NOTIFICATION = True/g' ~/monitoring/config.conf
+sed -i 's/DISC_NOTIFICATION = .*/DISC_NOTIFICATION = True/g' ~/monitoring/config.conf
+
+# Off notifications
+sed -i 's/CPU_NOTIFICATION = .*/CPU_NOTIFICATION = False/g' ~/monitoring/config.conf
+sed -i 's/RAM_NOTIFICATION = .*/RAM_NOTIFICATION = False/g' ~/monitoring/config.conf
+sed -i 's/DISC_NOTIFICATION = .*/DISC_NOTIFICATION = False/g' ~/monitoring/config.conf
+```
+
 ## Useful Commands
 ```bash
 # Check logs
-journalctl -u alert -f -o cat
+journalctl -u alertd -f -o cat
 ```
 ```bash
 # Restart
-systemctl restart alert
+systemctl restartd alert
 ```
 ```bash
 # Stop
-systemctl stop alert
+systemctl stop alertd
 ```
 
 ## Update
 ```bash
 cp ~/monitoring/config.conf ~/config_temp.conf
-systemctl stop alert && cd ~/monitoring
+systemctl stop alertd && cd ~/monitoring
 git fetch && git reset --hard
 git pull
 mv ~/config_temp.conf ~/monitoring/config.conf
 pip install -r requirements.txt
-systemctl start alert
+systemctl start alertd
 ```
 
 ## Delete
 ```bash
 systemctl stop alert
-rm /etc/systemd/system/alert.service
+rm /etc/systemd/system/alertd.service
 rm -rf $HOME/monitoring
 ```
