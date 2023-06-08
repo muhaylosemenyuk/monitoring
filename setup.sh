@@ -73,27 +73,27 @@ sleep 1
 
 # Run Monitoring service file
 echo -e "\e[1m\e[32m ****** Create Monitoring service file ****** \e[0m" && sleep 1
-sudo tee /etc/systemd/system/alert.service > /dev/null <<EOF
+sudo tee /etc/systemd/system/alertd.service > /dev/null <<EOF
 [Unit]
 Description=Monitoring Service
 After=network.target
 
 [Service]
 User=$USER
-ExecStart=/usr/bin/python3 $HOME/monitoring/alert.py
-WorkingDirectory=$HOME/monitoring
+ExecStart=/usr/bin/python3 ~/monitoring/alert.py
+WorkingDirectory=~/monitoring
 
 [Install]
 WantedBy=multi-user.target
 EOF
 
 sudo systemctl daemon-reload
-sudo systemctl enable alert
-sudo systemctl start alert
+sudo systemctl enable alertd
+sudo systemctl start alertd
 
 echo '=============== SETUP FINISHED ==================='
-echo -e "\e[1m\e[32m Check logs ===> journalctl -u alert -f -o cat \e[0m"
-echo -e "\e[1m\e[32m Restart ======> systemctl restart alert \e[0m"
+echo -e "\e[1m\e[32m Check logs ===> journalctl -u alertd -f -o cat \e[0m"
+echo -e "\e[1m\e[32m Restart ======> systemctl restart alertd \e[0m"
 echo "*****************************"
 
-sudo journalctl -u alert -f -o cat
+sudo journalctl -u alertd -f -o cat
