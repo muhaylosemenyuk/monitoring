@@ -32,6 +32,17 @@ systemctl restart alert
 systemctl stop alert
 ```
 
+## Update
+```bash
+cp ~/monitoring/config.conf ~/config_temp.conf
+systemctl stop alert && cd ~/monitoring
+git fetch && git reset --hard
+git pull
+mv ~/config_temp.conf ~/monitoring/config.conf
+pip install -r requirements.txt
+systemctl start alert
+```
+
 ## Delete
 ```bash
 systemctl stop alert
