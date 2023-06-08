@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Update the repositories
-echo -e "        \e[1m\e[32m Update the repositories--> \e[0m" && sleep 1
+echo -e "\e[1m\e[32m ****** Update the repositories ****** \e[0m" && sleep 1
 sudo apt update && apt upgrade -y
 sudo apt install pip -y
 
@@ -15,7 +15,7 @@ cd monitoring && pip install -r requirements.txt
 #=======================================================================
 
 # Create config.conf
-echo -e "        \e[1m\e[32m Create config.conf--> \e[0m" && sleep 1
+echo -e "\e[1m\e[32m ****** Create config.conf ****** \e[0m" && sleep 1
 
 if [ -z "$TELEGRAM_API_KEY" ]; then
   echo "*********************"
@@ -49,8 +49,8 @@ DISK_THRESHOLD = 90
 EOF
 
 echo "*****************************"
-echo -e "\e[1m\e[32m CPU_THRESHOLD = 90 \e[0m"
-echo -e "\e[1m\e[32m RAM_THRESHOLD = 90\e[0m"
+echo -e "\e[1m\e[32m CPU_THRESHOLD  = 90 \e[0m"
+echo -e "\e[1m\e[32m RAM_THRESHOLD  = 90\e[0m"
 echo -e "\e[1m\e[32m DISK_THRESHOLD = 90 \e[0m"
 echo "*****************************"
 sleep 1
@@ -58,7 +58,7 @@ sleep 1
 #=======================================================================
 
 # Run Monitoring service file
-echo -e "        \e[1m\e[32m Create Monitoring service file--> \e[0m" && sleep 1
+echo -e "\e[1m\e[32m ****** Create Monitoring service file ****** \e[0m" && sleep 1
 sudo tee /etc/systemd/system/alert.service > /dev/null <<EOF
 [Unit]
 Description=Monitoring Service
@@ -78,5 +78,8 @@ sudo systemctl enable alert
 sudo systemctl start alert
 
 echo '=============== SETUP FINISHED ==================='
+echo -e "\e[1m\e[32m Check logs ===> journalctl -u alert -f -o cat \e[0m"
+echo -e "\e[1m\e[32m Restart ======> systemctl restart alert \e[0m"
+echo "*****************************"
 
 sudo journalctl -u alert -f -o cat
