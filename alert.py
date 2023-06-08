@@ -10,9 +10,6 @@ config.read('config.conf')
 
 API_KEY = config.get('Telegram', 'API_KEY')
 CHAT_ID = config.get('Telegram', 'CHAT_ID')
-CPU_THRESHOLD = config.getint('Thresholds', 'CPU_THRESHOLD')
-RAM_THRESHOLD = config.getint('Thresholds', 'RAM_THRESHOLD')
-DISK_THRESHOLD = config.getint('Thresholds', 'DISK_THRESHOLD')
 
 SERVER_NAME = socket.gethostname()
 
@@ -30,6 +27,10 @@ def main():
     send_message(f'⚙️ [ {SERVER_NAME} ]  >>>  alert.service is started!')
     
     while True:
+        CPU_THRESHOLD = config.getint('Thresholds', 'CPU_THRESHOLD')
+        RAM_THRESHOLD = config.getint('Thresholds', 'RAM_THRESHOLD')
+        DISK_THRESHOLD = config.getint('Thresholds', 'DISK_THRESHOLD')
+        
         # Check CPU usage
         cpu_percent = psutil.cpu_percent(interval=1)
 
