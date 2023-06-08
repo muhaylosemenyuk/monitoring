@@ -20,7 +20,6 @@ echo -e "\e[1m\e[32m ****** Create config.conf ****** \e[0m" && sleep 1
 if [ -z "$TELEGRAM_API_KEY" ]; then
   echo "*********************"
   echo -e "\e[1m\e[32m	Enter your TELEGRAM_API_KEY:\e[0m"
-  echo "*********************"
   read TELEGRAM_API_KEY
   echo "==================================================="
   echo 'export TELEGRAM_API_KEY='$TELEGRAM_API_KEY >> $HOME/.bash_profile
@@ -30,7 +29,6 @@ fi
 if [ -z "$MONITORING_CHAT_ID" ]; then
   echo "*********************"
   echo -e "\e[1m\e[32m	Enter your MONITORING_CHAT_ID:\e[0m"
-  echo "*********************"
   read MONITORING_CHAT_ID
   echo "==================================================="
   echo 'export MONITORING_CHAT_ID='$MONITORING_CHAT_ID >> $HOME/.bash_profile
