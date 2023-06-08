@@ -41,15 +41,15 @@ API_KEY = $TELEGRAM_API_KEY
 CHAT_ID = $MONITORING_CHAT_ID
 
 [Thresholds]
-CPU_THRESHOLD = 90
-RAM_THRESHOLD = 90
+CPU_THRESHOLD = 95
+RAM_THRESHOLD = 95
 DISK_THRESHOLD = 90
 EOF
 
 echo "*****************************"
-echo -e "\e[1m\e[32m CPU_THRESHOLD  = 90 \e[0m"
-echo -e "\e[1m\e[32m RAM_THRESHOLD  = 90\e[0m"
-echo -e "\e[1m\e[32m DISK_THRESHOLD = 90 \e[0m"
+echo -e "\e[1m\e[32m CPU_THRESHOLD  = $CPU_THRESHOLD \e[0m"
+echo -e "\e[1m\e[32m RAM_THRESHOLD  = $RAM_THRESHOLD \e[0m"
+echo -e "\e[1m\e[32m DISK_THRESHOLD = $DISK_THRESHOLD \e[0m"
 echo "*****************************"
 sleep 1
 
