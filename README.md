@@ -69,3 +69,18 @@ systemctl stop alertd
 rm /etc/systemd/system/alertd.service
 rm -rf $HOME/monitoring
 ```
+
+### How to rename your hostname
+```bash
+# Rename your server
+sudo nano /etc/hostname
+```
+
+```bash
+# Replace all the old names in the file with the new ones
+sudo nano /etc/hosts
+```
+
+```bash
+sudo reboot
+```
