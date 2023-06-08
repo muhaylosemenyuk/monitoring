@@ -39,11 +39,14 @@ def main():
     
     get_config_variables()
     
-    text = f'⚙️ [ {SERVER_NAME} ]  >>>  alert.service is started!' \
-           f'\n\n[ Notifications ]:' \
-           f'\nCPU - 🔔' if CPU_NOTIFICATION else f'\nCPU - 🔕' \
-           f'\nRAM - 🔔' if RAM_NOTIFICATION else f'\nRAM - 🔕' \
-           f'\nDISC - 🔔' if DISC_NOTIFICATION else f'\nDISC - 🔕' \
+    text = f'''⚙️ [ {SERVER_NAME} ]  >>>  alert.service is started!
+
+[ Notifications ]:
+{('🔔' if CPU_NOTIFICATION else '🔕')} CPU
+{('🔔' if RAM_NOTIFICATION else '🔕')} RAM
+{('🔔' if DISC_NOTIFICATION else '🔕')} DISC
+'''
+
     
     send_message(text)
     
