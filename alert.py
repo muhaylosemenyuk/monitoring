@@ -27,6 +27,7 @@ def main():
     send_message(f'⚙️ [ {SERVER_NAME} ]  >>>  alert.service is started!')
     
     while True:
+        config.read('config.conf')
         CPU_THRESHOLD = config.getint('Thresholds', 'CPU_THRESHOLD')
         RAM_THRESHOLD = config.getint('Thresholds', 'RAM_THRESHOLD')
         DISK_THRESHOLD = config.getint('Thresholds', 'DISK_THRESHOLD')
