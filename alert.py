@@ -42,11 +42,10 @@ def main():
     text = f'''⚙️ [ {SERVER_NAME} ]  >>>  alert.service is started!
 
 [ Notifications ]:
-{('🔔' if CPU_NOTIFICATION else '🔕')} CPU
-{('🔔' if RAM_NOTIFICATION else '🔕')} RAM
-{('🔔' if DISC_NOTIFICATION else '🔕')} DISC
+{('🔔' if CPU_NOTIFICATION else '🔕')} [  CPU  ]
+{('🔔' if RAM_NOTIFICATION else '🔕')} [  RAM  ]
+{('🔔' if DISC_NOTIFICATION else '🔕')} [  DISC  ]
 '''
-
     
     send_message(text)
     
