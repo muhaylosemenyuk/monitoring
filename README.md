@@ -10,7 +10,7 @@ source <(curl -s https://raw.githubusercontent.com/NodersUA/monitoring/main/setu
 [How to get Telegram bot API token](https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token)
 
 ##### 3. Enter your MONITORING_CHAT_ID
-[How to get a group chat id?](https://www.siteguarding.com/en/how-to-get-telegram-bot-api-token)
+[How to get a group chat id?](https://stackoverflow.com/questions/32423837/telegram-bot-how-to-get-a-group-chat-id)
 
 ## Configuration
 If you want to change the threshold values ​​then edit the `config.conf` file in the `monitoring` directory
