@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Logo
+curl -s https://raw.githubusercontent.com/NodersUA/Scripts/main/logo.sh | bash
+
 CPU_THRESHOLD=95
 RAM_THRESHOLD=95
 DISK_THRESHOLD=90
@@ -12,7 +15,7 @@ sudo apt install pip -y
 #=======================================================================
 
 # Clone repository
-echo -e "        \e[1m\e[32m Clone repository--> \e[0m" && sleep 1
+echo -e "\e[1m\e[32m ***** Clone repository ***** \e[0m" && sleep 1
 cd $HOME && git clone https://github.com/NodersUA/monitoring
 cd monitoring && pip install -r requirements.txt
 
