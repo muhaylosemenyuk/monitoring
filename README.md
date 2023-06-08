@@ -15,7 +15,7 @@ source <(curl -s https://raw.githubusercontent.com/NodersUA/monitoring/main/setu
 ## Configuration
 If you want to change the threshold values ​​then edit the `config.conf` file in the `monitoring` directory
 ```bash
-nano $HOME/monitoring/config.conf
+nano ~/monitoring/config.conf
 ```
 
 You can also change the threshold values ​​with commands
@@ -45,7 +45,7 @@ journalctl -u alertd -f -o cat
 ```
 ```bash
 # Restart
-systemctl restartd alert
+systemctl restart alertd
 ```
 ```bash
 # Stop
@@ -65,7 +65,7 @@ systemctl start alertd
 
 ## Delete
 ```bash
-systemctl stop alert
+systemctl stop alertd
 rm /etc/systemd/system/alertd.service
 rm -rf $HOME/monitoring
 ```
