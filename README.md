@@ -58,7 +58,7 @@ cp ~/monitoring/config.conf ~/config_temp.conf
 systemctl stop alertd && cd ~/monitoring
 git fetch && git reset --hard
 git pull
-mv ~/config_temp.conf ~/monitoring/config.conf
+mv -f ~/config_temp.conf ~/monitoring/config.conf
 pip install -r requirements.txt
 systemctl start alertd
 ```
