@@ -8,7 +8,7 @@ from configparser import ConfigParser
 config = ConfigParser()
 config.read('config.conf')
 
-SERVER_NAME = socket.gethostname()
+SERVER_NAME = "%23" + socket.gethostname().replace('-', '_')
 
 # Function for sending a message in Telegram
 def send_message(message):
@@ -47,7 +47,7 @@ def main():
 {('🔔' if DISC_NOTIFICATION else '🔕')} [  DISC  ]
 '''
     
-    send_message(text)
+    # send_message(text)
     
     
     while True:
