@@ -8,7 +8,7 @@ from configparser import ConfigParser
 config = ConfigParser()
 config.read('config.conf')
 
-SERVER_NAME = "%23" + socket.gethostname().replace('-', '_')
+SERVER_NAME = "\%23" + socket.gethostname().replace('-', '_')
 
 # Function for sending a message in Telegram
 def send_message(message):
